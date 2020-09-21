@@ -1,0 +1,11 @@
+D:\Interview\Interviewtracker.Entities\bin\Debug\Interviewtracker.Entities.dll
+D:\Interview\Interviewtracker.Entities\bin\Debug\Interviewtracker.Entities.pdb
+D:\Interview\Interviewtracker.Entities\obj\Debug\Interviewtracker.Entities.csprojAssemblyReference.cache
+D:\Interview\Interviewtracker.Entities\obj\Debug\Interviewtracker.Entities.csproj.CoreCompileInputs.cache
+D:\Interview\Interviewtracker.Entities\obj\Debug\Interviewtracker.Entities.dll
+D:\Interview\Interviewtracker.Entities\obj\Debug\Interviewtracker.Entities.pdb
+D:\IIHT\MVC EF\Interview\Interviewtracker.Entities\bin\Debug\Interviewtracker.Entities.dll
+D:\IIHT\MVC EF\Interview\Interviewtracker.Entities\bin\Debug\Interviewtracker.Entities.pdb
+D:\IIHT\MVC EF\Interview\Interviewtracker.Entities\obj\Debug\Interviewtracker.Entities.csproj.CoreCompileInputs.cache
+D:\IIHT\MVC EF\Interview\Interviewtracker.Entities\obj\Debug\Interviewtracker.Entities.dll
+D:\IIHT\MVC EF\Interview\Interviewtracker.Entities\obj\Debug\Interviewtracker.Entities.pdb

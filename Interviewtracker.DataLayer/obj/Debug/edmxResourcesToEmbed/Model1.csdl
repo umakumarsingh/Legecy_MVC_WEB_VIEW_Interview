@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="InterviewerTrackerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ApplicationUser">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ReportingTo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserTypes" Type="Int32" Nullable="false" />
+    <Property Name="Stat" Type="Int32" Nullable="false" />
+    <Property Name="MobileNumber" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="Interviews" Relationship="Self.FK_Interviews_ApplicationUsers_ApplicationUsersUserId" FromRole="ApplicationUsers" ToRole="Interviews" />
+  </EntityType>
+  <EntityType Name="Interview">
+    <Key>
+      <PropertyRef Name="InterviewId" />
+    </Key>
+    <Property Name="InterviewId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InterviewName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Interviewer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="InterviewUser" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserSkills" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="InterviewDate" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="InterviewTime" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="InterViewsStatus" Type="Int32" Nullable="false" />
+    <Property Name="TInterViews" Type="Int32" Nullable="false" />
+    <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ApplicationUsersUserId" Type="Int32" />
+    <NavigationProperty Name="ApplicationUser" Relationship="Self.FK_Interviews_ApplicationUsers_ApplicationUsersUserId" FromRole="Interviews" ToRole="ApplicationUsers" />
+  </EntityType>
+  <Association Name="FK_Interviews_ApplicationUsers_ApplicationUsersUserId">
+    <End Role="ApplicationUsers" Type="Self.ApplicationUser" Multiplicity="0..1" />
+    <End Role="Interviews" Type="Self.Interview" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ApplicationUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Interviews">
+        <PropertyRef Name="ApplicationUsersUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="InterviewerTrackerDbContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ApplicationUsers" EntityType="Self.ApplicationUser" />
+    <EntitySet Name="Interviews" EntityType="Self.Interview" />
+    <AssociationSet Name="FK_Interviews_ApplicationUsers_ApplicationUsersUserId" Association="Self.FK_Interviews_ApplicationUsers_ApplicationUsersUserId">
+      <End Role="ApplicationUsers" EntitySet="ApplicationUsers" />
+      <End Role="Interviews" EntitySet="Interviews" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

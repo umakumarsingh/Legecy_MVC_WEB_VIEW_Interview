@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="InterviewerTrackerModelStoreContainer" CdmEntityContainer="InterviewerTrackerDbContext">
+    <EntitySetMapping Name="ApplicationUsers">
+      <EntityTypeMapping TypeName="InterviewerTrackerModel.ApplicationUser">
+        <MappingFragment StoreEntitySet="ApplicationUsers">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="ReportingTo" ColumnName="ReportingTo" />
+          <ScalarProperty Name="UserTypes" ColumnName="UserTypes" />
+          <ScalarProperty Name="Stat" ColumnName="Stat" />
+          <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Interviews">
+      <EntityTypeMapping TypeName="InterviewerTrackerModel.Interview">
+        <MappingFragment StoreEntitySet="Interviews">
+          <ScalarProperty Name="InterviewId" ColumnName="InterviewId" />
+          <ScalarProperty Name="InterviewName" ColumnName="InterviewName" />
+          <ScalarProperty Name="Interviewer" ColumnName="Interviewer" />
+          <ScalarProperty Name="InterviewUser" ColumnName="InterviewUser" />
+          <ScalarProperty Name="UserSkills" ColumnName="UserSkills" />
+          <ScalarProperty Name="InterviewDate" ColumnName="InterviewDate" />
+          <ScalarProperty Name="InterviewTime" ColumnName="InterviewTime" />
+          <ScalarProperty Name="InterViewsStatus" ColumnName="InterViewsStatus" />
+          <ScalarProperty Name="TInterViews" ColumnName="TInterViews" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="ApplicationUsersUserId" ColumnName="ApplicationUsersUserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
